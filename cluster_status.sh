@@ -1,0 +1,1 @@
+currenttime=`date +%Y-%m-%dT%H:%M:%S` ;  squeue --format="%.18i %.10u %.10T %.15M %.15l %.10m %.10Q %.25V %.25S %.15R" |  awk -v time=${currenttime} '{if(NF == 10){if($9 == "N/A"){print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7"\t"$8"\t'${currenttime}'\t"$10 }else{print}}}' | column -t > ~/cluster_status.txt
