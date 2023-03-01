@@ -2,6 +2,11 @@ library(tidyverse)
 library(cowplot)
 library(ggiraph)
 
+#Instead of manually creating running the .cluster_status.sh in the cluster and later downloading the output file, you can let R to do it with those commads
+#You still need to have a copy of .cluster_status.sh in your home directory on the cluster
+#system("ssh <USER>@login.genome.au.dk 'bash .cluster_status.sh'")
+#system("scp <USER>l@login.genome.au.dk:.cluster_status.txt ~/cluster_status.txt")
+
 path_cluster_status <- "~/cluster_status.txt"
 color_users <- c()
 
