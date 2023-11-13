@@ -71,10 +71,10 @@ df %>%
 
 if(length(color_users)){
   plot1 <- plot1 + 
-    geom_boxplot_interactive(data = . %>% filter(USER %in% color_users), aes(x = USER, y = value, color = USER, tooltip = USER, data_id = USER), show.legend = FALSE) 
+    geom_boxplot_interactive(data = . %>% filter(USER %in% color_users), aes(x = USER, y = value, color = USER, tooltip = USER, data_id = USER), width = 1, show.legend = FALSE) 
 
   plot2 <- plot2 + 
-    geom_bar_interactive(data = .%>% filter(USER %in% color_users), stat = "identity", aes(x = USER, y = log10(n), fill = USER, tooltip = USER, data_id = USER), show.legend = FALSE)
+    geom_bar_interactive(data = .%>% filter(USER %in% color_users), stat = "identity", aes(x = USER, y = log10(n), fill = USER, tooltip = USER, data_id = USER), width = 1, show.legend = FALSE)
 }
 
 
